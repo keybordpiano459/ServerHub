@@ -1,12 +1,10 @@
 package me.KeybordPiano459.ServerHub;
 
-import java.util.Arrays;
 import java.util.List;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
-import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
@@ -30,7 +28,6 @@ public class IconMenu implements Listener {
         this.plugin = plugin;
         this.optionNames = new String[size];
         this.optionIcons = new ItemStack[size];
-        plugin.getServer().getPluginManager().registerEvents(this, plugin);
     }
 
     public IconMenu setOption(int position, ItemStack icon, String name, List<String> info) {
@@ -48,14 +45,13 @@ public class IconMenu implements Listener {
     }
 
     public void destroy() {
-        HandlerList.unregisterAll(this);
         handler = null;
         plugin = null;
         optionNames = null;
         optionIcons = null;
     }
 
-    @EventHandler(priority = EventPriority.MONITOR)
+    @EventHandler(priority = EventPriority.HIGHEST)
     void onInventoryClick(InventoryClickEvent event) {
         if (event.getInventory().getTitle().equals(name)) {
             event.setCancelled(true);

@@ -1,6 +1,6 @@
 name: ServerHub
 main: me.KeybordPiano459.ServerHub.ServerHub
-version: 1.0
+version: 1.0.2
 
 commands:
   hub:
