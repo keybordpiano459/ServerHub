@@ -1,0 +1,7 @@
+name: ServerHub
+main: me.KeybordPiano459.ServerHub.ServerHub
+version: 1.0
+
+commands:
+  hub:
+    description: Open up a GUI with server events

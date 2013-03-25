@@ -1,0 +1,15 @@
+# Mac filesystem dust
+.DS_Store
+.DS_Storetarget
+/target
+
+
+# Eclipse
+/.classpath
+/.project
+/.settings
+/bin
+
+
+# Netbeans
+/nbproject
