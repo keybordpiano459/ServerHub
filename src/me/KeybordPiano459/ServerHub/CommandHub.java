@@ -14,7 +14,7 @@ public class CommandHub implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-        if (cmd.getName().equalsIgnoreCase("hub")) {
+        if (cmd.getName().equalsIgnoreCase("hub") && ((Player)sender).hasPermission("serverhub.openhub") {
             if (sender instanceof Player) {
                 Player player = (Player) sender;
                 if (args.length == 0) {
