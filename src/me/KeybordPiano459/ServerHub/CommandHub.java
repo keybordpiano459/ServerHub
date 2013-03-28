@@ -14,13 +14,19 @@ public class CommandHub implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-        if (cmd.getName().equalsIgnoreCase("hub")) {
+        if (cmd.getName().equalsIgnoreCase("hub") {
             if (sender instanceof Player) {
                 Player player = (Player) sender;
-                if (args.length == 0) {
-                    plugin.getIconMenu().open(player);
+                if (player.hasPermission("serverhub.hub")) {
+                    if (args.length == 0) {
+                        plugin.getIconMenu().open(player);
+                    } else {
+                        player.sendMessage(ChatColor.RED + "Incorrect usage! Type /hub");
+                    }
+                    return true;
                 } else {
-                    player.sendMessage(ChatColor.RED + "Incorrect usage! Type /hub");
+                    player.sendMessage(ChatColor.RED + "No permission!");
+                    return false;
                 }
             } else {
                 plugin.getLogger().info("You can't use this command from the console!");

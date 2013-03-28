@@ -1,7 +1,11 @@
 name: ServerHub
 main: me.KeybordPiano459.ServerHub.ServerHub
 version: 1.0.2
-
+permissions:
+  serverhub.hub:
+    description: Allows user to open the server hub
+    default: op
 commands:
   hub:
     description: Open up a GUI with server events
+    usage: /hub
