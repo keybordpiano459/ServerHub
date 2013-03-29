@@ -17,10 +17,14 @@ public class CommandHub implements CommandExecutor {
         if (cmd.getName().equalsIgnoreCase("hub")) {
             if (sender instanceof Player) {
                 Player player = (Player) sender;
-                if (args.length == 0) {
-                    plugin.getIconMenu().open(player);
+                if (player.hasPermission("serverhub.hub") {
+                    if (args.length == 0) {
+                        plugin.getIconMenu().open(player);
+                    } else {
+                        player.sendMessage(ChatColor.RED + "Incorrect usage! Type /hub");
+                    }
                 } else {
-                    player.sendMessage(ChatColor.RED + "Incorrect usage! Type /hub");
+                    player.sendMessage(ChatColor.RED + "You don't have permission to use this command!");
                 }
             } else {
                 plugin.getLogger().info("You can't use this command from the console!");
