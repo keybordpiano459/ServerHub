@@ -5,3 +5,14 @@ version: 1.0.2
 commands:
   hub:
     description: Open up a GUI with server events
+    permission: serverhub.hub
+
+permissions:
+  serverhub.*:
+    description: All ServerHub perms
+    default: op
+    children:
+      serverhub.hub: true
+  serverhub.hub:
+    description: Access to /hub
+    default: true
