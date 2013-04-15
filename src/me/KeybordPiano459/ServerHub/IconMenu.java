@@ -40,9 +40,11 @@ public class IconMenu implements Listener {
         Inventory inventory = Bukkit.createInventory(player, size, name);
         for (int i = 0; i < optionIcons.length; i++) {
             if (optionIcons[i] != null){
-            	ItemStack op = inventory.setItem(i, optionIcons[i]);
-            	if(optionIcons[i].split(":")[1]!= null)
+            	if(optionIcons[i].split(":")[1]!= null){
+            		ItemStack op = inventory.setItem(i, optionIcons[i].split[0]);
             		op.setData((byte) optionIcons[i].split(":")[1]);
+            	}else
+            		inventory.setItem(i, optionIcons[i]);
             }
         }
         player.openInventory(inventory);
