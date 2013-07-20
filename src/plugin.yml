@@ -1,6 +1,6 @@
 name: ServerHub
 main: me.KeybordPiano459.ServerHub.ServerHub
-version: 1.0.2
+version: 1.1
 
 commands:
   hub:
@@ -13,6 +13,10 @@ permissions:
     default: op
     children:
       serverhub.hub: true
+      serverhub.reload: true
   serverhub.hub:
     description: Access to /hub
     default: true
+  serverhub.reload:
+    description: Access to /hub reload
+    default: op

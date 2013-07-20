@@ -41,6 +41,9 @@ public class Config {
             w(w, "# What should the name of the GUI be?");
             w(w, "gui-name: Server Activities");
             w(w, "");
+            w(w, "# What item should players right click to open the GUI?");
+            w(w, "click-item-id: 345");
+            w(w, "");
             w(w, "# All GUI items are here. Add slots in the same format, and it will add items to the GUI");
             w(w, "items:");
             w(w, "  slot-0:");
